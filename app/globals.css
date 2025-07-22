@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --accent-primary: #3b82f6;
+    --accent-secondary: #eff6ff;
+    --accent-hover: #2563eb;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.font-tourney {
+  font-family: "Tourney", sans-serif;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Custom file input styling with CSS variables */
+input[type="file"]::-webkit-file-upload-button {
+  background-color: var(--accent-primary);
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+  background-color: var(--accent-hover);
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* Dark mode focus styles */
+.dark button:focus-visible,
+.dark input:focus-visible {
+  outline-color: var(--accent-primary);
+}
+
+/* Custom scrollbar for code blocks */
+pre::-webkit-scrollbar {
+  height: 8px;
+}
+
+pre::-webkit-scrollbar-track {
+  background: #374151;
+}
+
+pre::-webkit-scrollbar-thumb {
+  background: #6b7280;
+  border-radius: 4px;
+}
+
+pre::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Dark mode scrollbar adjustments */
+.dark pre::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+.dark pre::-webkit-scrollbar-thumb {
+  background: #4b5563;
+}
+
+.dark pre::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* Theme transition for smooth switching */
+html {
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* Ensure proper contrast in dark mode */
+.dark {
+  color-scheme: dark;
+}
+
+/* Custom selection colors using CSS variables */
+::selection {
+  background-color: var(--accent-primary);
+  color: white;
+}
+
+.dark ::selection {
+  background-color: var(--accent-primary);
+  color: white;
+}
+
+/* Accent color utilities */
+.text-accent-primary {
+  color: var(--accent-primary);
+}
+
+.bg-accent-primary {
+  background-color: var(--accent-primary);
+}
+
+.bg-accent-secondary {
+  background-color: var(--accent-secondary);
+}
+
+.hover\:bg-accent-hover:hover {
+  background-color: var(--accent-hover);
+}
+
+.border-accent-primary {
+  border-color: var(--accent-primary);
+}
+
+.ring-accent-primary {
+  --tw-ring-color: var(--accent-primary);
+}
+
+/* Color picker specific styles */
+input[type="color"] {
+  -webkit-appearance: none;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 0.5rem;
+}
+
+/* Smooth color transitions */
+.color-transition {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
