@@ -12,7 +12,7 @@ export default function HomePage() {
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   // Replace with your actual webhook URL
-  const WEBHOOK_URL = "/api/upload"
+  const WEBHOOK_URL = "https://junaidasif21.app.n8n.cloud/webhook-test/my-resume"
 
   const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0]
