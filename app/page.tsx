@@ -11,13 +11,19 @@ export default function HomePage() {
   const [errorMessage, setErrorMessage] = useState("")
   const fileInputRef = useRef<HTMLInputElement>(null)
 
-  // Replace with your actual webhook URL
-  const WEBHOOK_URL = "https://junaidasif21.app.n8n.cloud/webhook-test/my-resume"
+  // Use local API route for uploads
+  const WEBHOOK_URL = "/api/upload"
 
   const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0]
     if (file) {
       if (file.type === "application/pdf") {
+        if (file.size > 10 * 1024 * 1024) { // 10MB
+          setErrorMessage("File size must be less than 10MB");
+          setUploadStatus("error");
+          setSelectedFile(null);
+          return;
+        }
         setSelectedFile(file)
         setUploadStatus("idle")
         setErrorMessage("")
