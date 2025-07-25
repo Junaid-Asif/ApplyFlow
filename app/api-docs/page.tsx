@@ -30,7 +30,7 @@ export default function ApiDocsPage() {
                   <span className="font-tourney font-semibold text-gray-800 dark:text-gray-200">Endpoint</span>
                 </div>
                 <code className="text-sm text-blue-700 dark:text-blue-300 bg-white dark:bg-gray-700 px-3 py-1 rounded">
-                  https://your-webhook-url.com/upload
+                  https://junaidasif21.app.n8n.cloud/webhook-test/my-resume
                 </code>
               </div>
 
